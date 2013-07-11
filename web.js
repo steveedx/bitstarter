@@ -1,9 +1,10 @@
 var express = require('express');
-
+var fs = require('fs');
 var app = express.createServer(express.logger());
 
 var buf = fs.readFile('index.html');
 var content = buf.toString('utf-8')
+//console.log(buf);
 
 app.get('/', function(request, response) {
   response.send(content);
